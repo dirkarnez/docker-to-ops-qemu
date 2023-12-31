@@ -1,0 +1,10 @@
+{
+    "Files": ["mariadbd"],
+    "RunConfig": {
+        "Background": false,
+        "ShowDebug": true,
+        "ShowErrors": true,
+        "Verbose": true,
+        "Ports": ["3306"]
+    }
+}
