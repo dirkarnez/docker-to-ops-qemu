@@ -14,10 +14,11 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-
+      
       - name: Build the stack
         run: |
-          apt-get -y --no-install-recommends install \
+          sudo apt-get update -y \ 
+          && sudo apt-get -y --no-install-recommends install \
           ca-certificates \
           build-essential \
           qemu-kvm \
