@@ -27,7 +27,7 @@ jobs:
 
       - run: |
           docker build -t my_mariadb_latest . && \
-          $HOME/.ops/bin/ops pkg from-docker my_mariadb_latest -c -n my_mariadb_latest -f "/var/lib/mysql/mariadbd" && \
+          $HOME/.ops/bin/ops pkg from-docker my_mariadb_latest -c -n my_mariadb_latest -f mariadbd && \
           $HOME/.ops/bin/ops image create --config config.json --imagename my_mariadb_latest --target-cloud onprem --local --nightly --package my_mariadb_latest && \
           $HOME/.ops/bin/ops image list && \
           ls && \
