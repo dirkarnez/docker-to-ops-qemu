@@ -28,8 +28,8 @@ jobs:
       - run: |
           docker build -t my_mariadb_latest . && \
           $HOME/.ops/bin/ops pkg from-docker my_mariadb_latest -n my_mariadb_latest -f mariadbd && \
-          $HOME/.ops/bin/ops pkg load --local my_mariadb_latest && \
-          $HOME/.ops/bin/ops image create --package my_mariadb_latest -i my_mariadb_latest && \
+          $HOME/.ops/bin/ops image list -t onprem && \
+          $HOME/.ops/bin/ops build -e PORT=3306 -c config.json my_mariadb_latest -i my_mariadb_latest && \
           ls
           
       - name: Archive Release
