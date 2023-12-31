@@ -29,6 +29,7 @@ jobs:
           docker build -t my_mariadb_latest . && \
           $HOME/.ops/bin/ops pkg from-docker my_mariadb_latest -f my_mariadb_latest && \
           $HOME/.ops/bin/ops image create --package my_mariadb_latest -i my_mariadb_latest && \
+          ls
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
