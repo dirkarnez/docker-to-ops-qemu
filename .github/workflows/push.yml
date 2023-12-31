@@ -17,8 +17,7 @@ jobs:
 
       - name: Build the stack
         run: |
-          apt-get update -y \ 
-          && apt-get -y --no-install-recommends install \
+          apt-get -y --no-install-recommends install \
           ca-certificates \
           build-essential \
           qemu-kvm \
