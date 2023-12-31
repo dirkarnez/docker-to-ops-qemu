@@ -30,17 +30,21 @@ jobs:
           $HOME/.ops/bin/ops pkg from-docker my_mariadb_latest -c -n my_mariadb_latest -f mariadbd && \
           $HOME/.ops/bin/ops image create mariadbd --config config.json --imagename my_mariadb_latest --target-cloud onprem --local --nightly --package my_mariadb_latest && \
           $HOME/.ops/bin/ops image list && \
+          ls && \
+          cd $HOME/.ops/images && \
           ls
+          
           
       - name: Archive Release
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
+          directory: "$HOME/.ops/images"
           filename: "${{ github.ref_name }}.zip"
         
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "${{ github.ref_name }}.zip"
+          artifacts: "$HOME/.ops/images/${{ github.ref_name }}.zip"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
