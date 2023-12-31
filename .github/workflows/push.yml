@@ -39,12 +39,12 @@ jobs:
         uses: thedoctor0/zip-release@master
         with:
           type: 'zip'
-          directory: "$HOME/.ops/images"
+          directory: "/home/runner/.ops/images/"
           filename: "${{ github.ref_name }}.zip"
         
       - name: Release prebuilt
         uses: ncipollo/release-action@v1
         with:
-          artifacts: "$HOME/.ops/images/${{ github.ref_name }}.zip"
+          artifacts: "/home/runner/.ops/images/${{ github.ref_name }}.zip"
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
