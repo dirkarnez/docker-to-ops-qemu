@@ -1,5 +1,6 @@
 {
     "Files": ["mariadbd"],
+    "Args": ["--user=mysql"],
     "RunConfig": {
         "Background": false,
         "ShowDebug": true,
