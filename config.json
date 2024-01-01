@@ -1,5 +1,5 @@
 {
-    "Files": ["my_mariadb_latest"],
+    "Files": ["mariadbd"],
     "Args": ["--user=mysql"],
     "RunConfig": {
         "Background": false,
